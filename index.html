@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <title>BBS Bahrul Box Shoop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e1f5fe;
+      color: #222;
+    }
+
+    header {
+      background-color: #00A8FF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo img {
+      height: 50px;
+      border-radius: 8px;
+    }
+
+    .social-icons a {
+      margin-left: 10px;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #d1f1ff, #ffffff);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .category-buttons {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .category-buttons button {
+      margin: 8px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #00A8FF;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .category-buttons button:hover {
+      background-color: #FF6B81;
+    }
+
+    .products, .customize, .checkout {
+      display: none;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .products.active, .customize.active, .checkout.active {
+      display: grid;
+    }
+
+    .products {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .buy-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #00A8FF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .buy-button:hover {
+      background-color: #FF6B81;
+    }
+
+    .customize select, .checkout input, .checkout select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .back-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #fc4646;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #0080ff;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .footer-social-icons a img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-social-icons a img:hover {
+      transform: scale(1.1);
+    }
+
+    .copyright {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/RDAW.png" alt="Logo BBS">
+    </div>
+  <!--<div class="social-icons">
+      <a href="https://wa.me/6283143135784" target="_blank">WA</a>
+      <a href="https://youtube.com/@mainzstore1" target="_blank">YouTube</a>
+    </div>>-->
+  </header>
+
+  <section class="hero">
+     <h2>Audio Gear & Aksesoris Berkualitas Tinggi</h2>
+    <p>BBS Bahrul Box Shoop Device menyediakan audio gear, speaker, dan aksesoris berkualitas tinggi.</p>
+  </section>
+
+  <div class="category-buttons" id="categoryButtons">
+    <button onclick="showCategory('speaker')">Speaker</button>
+    <button onclick="showCategory('aksesoris')">Aksesoris</button>
+    <button onclick="showCategory('lain')">Lain-lain</button>
+  </div>
+
+  <section class="products" id="speaker">
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+    <div class="product">
+      <img src="images/logo.png" alt="BOX PLANAR">
+      <h2>BOX PLANAR</h2>
+      <p>FULL FINISHING</p>
+      <h3>Rp1.250.000</h3>
+      <button class="buy-button" onclick="customizeProduct('BOX PLANAR')">Beli Sekarang</button>
+    </div>
+  </section>
+  
+
+  <section class="products" id="aksesoris">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1580894908361-9671950339aa" alt="Kabel Audio">
+      <h3>Kabel Audio</h3>
+      <p>Rp75.000</p>
+      <button class="buy-button" onclick="customizeProduct('Kabel Audio')">Beli Sekarang</button>
+    </div>
+  </section>
+
+  <section class="products" id="lain">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1606813902764-5b4ce7eb15c6" alt="Kaos BSS">
+      <h3>Kaos BSS</h3>
+      <p>Rp100.000</p>
+      <button class="buy-button" onclick="customizeProduct('Kaos BSS')">Beli Sekarang</button>
+    </div>
+  </section>
+
+  <section class="customize" id="customize">
+    <h2>Varian Produk: <span id="selectedProduct"></span></h2>
+    <select id="variant">
+      <option value="Standar">Standar</option>
+      <option value="Premium">Premium</option>
+    </select>
+    <button class="buy-button" onclick="goToCheckout()">Llanjut Pembayaran</button>
+    <button class="back-button" onclick="backToCategory()">Kembali</button>
+  </section>
+
+  <section class="checkout" id="checkout">
+    <h2>Metode Pembayaran</h2>
+    <p id="checkoutInfo"></p>
+    <input type="text" id="nama" placeholder="Nama lengkap">
+    <input type="text" id="alamat" placeholder="Alamat lengkap">
+    <select id="pengiriman">
+      <option>JNE</option>
+      <option>J&T</option>
+      <option>SiCepat</option>
+    </select>
+    <select id="pembayaran">
+      <option>Transfer Bank</option>
+      <option>COD</option>
+      <option>QRIS</option>
+    </select>
+    <button class="buy-button" onclick="kirimWhatsapp()">Bayar Sekarang</button>
+    <button class="back-button" onclick="backToCategory()">Kembali</button>
+  </section>
+
+  <footer>
+    <h3>Tentang Kami</h3>
+    <p>BBS Bahrul Box Shoop adalah penyedia audio gear dan aksesoris premium untuk kebutuhan audio Anda.</p>
+    <div class="footer-social-icons">
+      <a href="https://fafaslot.situsresmi.com" target="_blank"><img src="images/logo.png" alt="FAFA Logo"></a>
+      <a href="https://wa.me/6283143135784" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WA"></a>
+      <a href="https://youtube.com/@mainzstore1" target="_blank"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YT"></a>
+      <a href="https://t.me/zaputra1" target="_blank"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="TG"></a>
+    </div>
+    <div class="copyright">
+      &copy; 2025 BSS Super Sound Device
+    </div>
+  </footer>
+
+  <script>
+    let selectedProduct = "";
+
+    function hideAllSections() {
+      document.querySelectorAll(".products, .customize, .checkout").forEach(el => el.classList.remove("active"));
+    }
+
+    function showCategory(category) {
+      hideAllSections();
+      document.getElementById("categoryButtons").style.display = "block";
+      document.getElementById(category).classList.add("active");
+    }
+
+    function customizeProduct(productName) {
+      selectedProduct = productName;
+      hideAllSections();
+      document.getElementById("categoryButtons").style.display = "none"; // Sembunyikan kategori
+      document.getElementById("selectedProduct").textContent = productName;
+      document.getElementById("customize").classList.add("active");
+    }
+
+    function goToCheckout() {
+      const variant = document.getElementById("variant").value;
+      document.getElementById("checkoutInfo").textContent = `Produk: ${selectedProduct} (Varian: ${variant})`;
+      hideAllSections();
+      document.getElementById("checkout").classList.add("active");
+    }
+
+    function backToCategory() {
+      hideAllSections();
+      document.getElementById("categoryButtons").style.display = "block";
+      showCategory("speaker");
+    }
+
+    function kirimWhatsapp() {
+      const nama = document.getElementById("nama").value;
+      const alamat = document.getElementById("alamat").value;
+      const pengiriman = document.getElementById("pengiriman").value;
+      const pembayaran = document.getElementById("pembayaran").value;
+      const variant = document.getElementById("variant").value;
+      const noWa = "6283143135784";
+      const pesan = `Halo BSS, saya ingin order:\n\nProduk: ${selectedProduct}\nVarian: ${variant}\nNama: ${nama}\nAlamat: ${alamat}\nPengiriman: ${pengiriman}\nPembayaran: ${pembayaran}`;
+      const url = `https://wa.me/${noWa}?text=${encodeURIComponent(pesan)}`;
+      window.open(url, '_blank');
+    }
+
+    window.onload = () => {
+      showCategory("speaker");
+    };
+  </script>
+
+</body>
+</html>
