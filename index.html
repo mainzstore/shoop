@@ -83,7 +83,24 @@
     .buy-button:hover {
       background-color: #FF6B81;
     }
-    .customize select, .customize input, .checkout input, .checkout select {
+    .customize input{
+
+    }
+     .checkout input{
+      width: 93%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+     }
+      .checkout select{
+        width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      }
+    .customize select {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
@@ -292,7 +309,7 @@
       const product = products.find(p => p.name === selectedProduct);
       const variant = product.variants.find(v => v.name === variantName);
       const totalPrice = variant.price * quantity;
-      document.getElementById("checkoutInfo").textContent = `Produk: ${selectedProduct} (Varian: ${variant.name}) x ${quantity} = ${formatRupiah(totalPrice)}`;
+      document.getElementById("checkoutInfo").textContent = `Produk: ${selectedProduct} (Varian: ${variant.name}) x ${quantity} Total: ${formatRupiah(totalPrice)}`;
       hideAllSections();
       document.getElementById("checkout").classList.add("active");
     }
